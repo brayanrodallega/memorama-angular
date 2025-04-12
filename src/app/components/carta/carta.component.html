@@ -1,0 +1,7 @@
+<div class="carta" [class.volteada]="carta.volteada || carta.encontrada"
+     (click)="alVoltear()">
+  <div class="frontal"></div>
+  <div class="trasera">
+    <img [src]="carta.imagen" alt="imagen carta">
+  </div>
+</div>

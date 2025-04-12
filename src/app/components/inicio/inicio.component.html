@@ -1,0 +1,18 @@
+<div class="inicio-container">
+  <h1>Bienvenido a Memorama</h1>
+  <div class="mode-selection">
+    <button [class.active]="mode === 1" (click)="onSelectMode(1)">1 Jugador</button>
+    <button [class.active]="mode === 2" (click)="onSelectMode(2)">2 Jugadores</button>
+  </div>
+  <div class="player-inputs">
+    <div>
+      <label>Nombre del Jugador 1:</label>
+      <input type="text" [(ngModel)]="player1" placeholder="Ingrese su nombre">
+    </div>
+    <div *ngIf="mode === 2">
+      <label>Nombre del Jugador 2:</label>
+      <input type="text" [(ngModel)]="player2" placeholder="Ingrese su nombre">
+    </div>
+  </div>
+  <button class="start-btn" (click)="iniciar()">Comenzar Juego</button>
+</div>

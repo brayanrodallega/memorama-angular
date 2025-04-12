@@ -1,0 +1,39 @@
+<div class="controles">
+  <button (click)="reiniciarPartida()">Reiniciar el juego</button>
+  <button (click)="volver()">Volver</button>
+  <div *ngIf="juego.mode === 2">
+    Turno: {{ juego.players[juego.obtenerTurno() - 1] }} (Jugador {{ turno }})<br>
+    P1: {{ puntaje[1] }} — P2: {{ puntaje[2] }}
+  </div>
+  <div *ngIf="juego.mode === 1">
+    Tiempo: {{ tiempo }} segundos
+  </div>
+</div>
+<div class="grid-cartas">
+  <app-carta *ngFor="let c of cartas" [carta]="c"></app-carta>
+</div>
+
+<!-- Modal al finalizar -->
+<div class="modal-overlay" *ngIf="juego.finished">
+  <div class="modal">
+    <h2>¡Juego Finalizado!</h2>
+    <div *ngIf="juego.mode === 2">
+      <p>Ganador: {{ juego.getWinner() }}</p>
+    </div>
+    <div *ngIf="juego.mode === 1">
+      <p>Tu tiempo: {{ tiempo }} segundos</p>
+      <h3>Tabla de Puntaje</h3>
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Tiempo (s)</th>
+        </tr>
+        <tr *ngFor="let entry of scoreboard">
+          <td>{{ entry.name }}</td>
+          <td>{{ entry.time }}</td>
+        </tr>
+      </table>
+    </div>
+    <button (click)="volver()">Volver</button>
+  </div>
+</div>

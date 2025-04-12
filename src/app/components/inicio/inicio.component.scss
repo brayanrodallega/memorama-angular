@@ -1,0 +1,63 @@
+.inicio-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mode-selection button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.mode-selection button.active,
+.mode-selection button:hover {
+  background: #4caf50;
+  color: #fff;
+}
+
+.player-inputs {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.player-inputs label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.player-inputs input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Evita que se desborde */
+}
+
+/* Agrega margen entre el bloque del jugador 1 y el del jugador 2 */
+.player-inputs div + div {
+  margin-top: 10px;
+}
+
+.start-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.start-btn:hover {
+  background: #45a049;
+}
